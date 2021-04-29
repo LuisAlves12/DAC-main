@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Abr-2021 às 17:46
+-- Tempo de geração: 29-Abr-2021 às 18:50
 -- Versão do servidor: 10.4.18-MariaDB
 -- versão do PHP: 7.4.16
 
@@ -83,6 +83,18 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `musicas`
+--
+
+CREATE TABLE `musicas` (
+  `id` int(11) NOT NULL,
+  `musica` varchar(255) NOT NULL,
+  `nome` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `password_resets`
 --
 
@@ -143,7 +155,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `musica`, `texto`, `status`, `bio`, `img_perfil`, `tipo_user`, `id_frame`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'LethalArms', 'hiddankill@gmail.com', 'Teste Musica2', 'Teste Texto2', 'Teste Status2', 'Teste Bio2', '1616965888_transferir.png', 'admin', 3, NULL, '$2y$10$l03QmGFhuu8EyH84Og83bujfGwaUizoH.76fbrgUSZydSQaVyhtcK', 'eQYssR4yQl6OmC12VHbGMBtyN3P0ytoAqMrL7rIDWC8UFA0aLhAXMgTOqKEH', '2021-03-26 23:16:51', '2021-04-22 07:09:58'),
 (3, 'nel', 'joana@aedah.pt', 'mala', NULL, NULL, 'tolo', 'default.jpg', 'membro', NULL, NULL, '$2y$10$znXVpdAFeOwcNo9qOkHQ7.NoegPNVPeKJXoj/.07po/1DW.jULuH2', NULL, '2021-03-29 12:46:10', '2021-03-29 12:46:52'),
-(4, 'Luis Alves', 'a15016@aedah.pt', NULL, NULL, NULL, NULL, 'default.jpg', 'membro', NULL, NULL, '$2y$10$u5k1e2pCsvdtA2w28ctG9uDNp6IT9toA6Bg3DVGXLvJYWo4UcF6Vy', NULL, '2021-04-29 13:54:00', '2021-04-29 13:54:00');
+(4, 'Luis Alves', 'a15016@aedah.pt', NULL, NULL, NULL, NULL, 'default.jpg', 'admin', NULL, NULL, '$2y$10$u5k1e2pCsvdtA2w28ctG9uDNp6IT9toA6Bg3DVGXLvJYWo4UcF6Vy', NULL, '2021-04-29 13:54:00', '2021-04-29 13:54:00');
 
 --
 -- Índices para tabelas despejadas
@@ -153,6 +165,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `musica`, `texto`, `status`, `bio`, 
 -- Índices para tabela `frames`
 --
 ALTER TABLE `frames`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `musicas`
+--
+ALTER TABLE `musicas`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -170,6 +188,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `frames`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de tabela `musicas`
+--
+ALTER TABLE `musicas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `users`
