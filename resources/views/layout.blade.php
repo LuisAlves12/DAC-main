@@ -23,6 +23,7 @@
 		<div class="col col-lg-12">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed">
         <a class="nav-brand text-dark" href="{{route('index')}}"><i class="fas fa-home"></i></a>
+        <a class="nav-brand text-dark" href="{{route('perfil.index')}}">Utilizadores</a>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<!-- <ul class="navbar-nav">
 						<li class="nav-item">
@@ -82,5 +83,15 @@
 <br>
 @yield('conteudo')
 <br>
+<table style="position:absolute; left: 350px; top: 80%;">
+  <tr>
+    <tr>
+    <td><img src="{{asset('img/Logo-AEDAH.jpg')}}" style="width:100%"></td>
+    <td style="color:white;"> ----------------------------------------</td>
+    <td><img src="{{asset('img/logocurso.png')}}" style="width:50%"></td>
+    </tr>
+    </tr>
+  </tbody>
+
 </body>
 </html>

@@ -1,6 +1,7 @@
 @extends('layout')
 @section('conteudo')
 <table class="table table-light table-striped">
+<h3>Alguns Utilizadores</h3>
 <thead>
     <tr>
       <th scope="col">Nome</th>

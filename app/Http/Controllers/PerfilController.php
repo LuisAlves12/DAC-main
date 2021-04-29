@@ -9,14 +9,21 @@ use App\Models\Frames;
 
 class PerfilController extends Controller
 {
-    public function index(Request $r){
+    public function index(){
+        $users= Perfil::all();
+        return view('perfil.index',[
+            'users'=>$users
+        ]);
+    }
+
+    public function show(Request $r){
         $nome = $r->nome;
         $user = Perfil::where('name',$nome)->first();
         $frame = Frames::where('id',$user->id_frame)->first();
         if(!is_null($frame)){
             $user['frame'] = $frame->img_frame;
         }
-        return view('perfil.index',['user'=>$user]);
+        return view('perfil.show',['user'=>$user]);
     }
 
     public function edit(Request $r){
