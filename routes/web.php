@@ -42,9 +42,9 @@ Route::get('/frame/create','App\Http\Controllers\FrameController@create')->name(
 
 Route::post('/frame/store','App\Http\Controllers\FrameController@store')->name('frame.store');
 
-Route::get('/freame/{id}/edit','App\Http\Controllers\FrameController@edit')->name('frame.edit');
+//Route::get('/freame/{id}/edit','App\Http\Controllers\FrameController@edit')->name('frame.edit');
 
-Route::patch('/frame/{id}/update','App\Http\Controllers\FrameController@update')->name('frame.update');
+//Route::patch('/frame/{id}/update','App\Http\Controllers\FrameController@update')->name('frame.update');
 
 // Route Musicas
 

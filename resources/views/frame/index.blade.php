@@ -13,11 +13,6 @@
     <tr>
     <td>{{$frame->nome}}</td>
     <td><img src="{{asset('img/'.$frame->img_frame)}}"></td>
-    <td>
-      @if(Auth::user()->tipo_user == "admin")
-        <a class="dropdown-item text-dark" href="{{route('frame.edit')}}">Editar Frame</a>
-      @endif 
-    </td>
     </tr>
   @endforeach
     </tr>

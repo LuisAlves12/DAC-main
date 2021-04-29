@@ -1,6 +1,6 @@
 @extends('layout')
 @section('conteudo')
-<table class="table table-light table-striped">
+<table class="table ">
 <thead>
     <tr>
       <th scope="col">Nome</th>
