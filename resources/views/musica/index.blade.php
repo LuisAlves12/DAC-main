@@ -1,33 +1,29 @@
 @extends('layout')
-@section('header')
-Musicas
-@endsection
-@section('titulo-pagina')
-Livros
-@endsection
 @section('conteudo')
-<table class="table table-dark table-striped">
+<table class="table table-light table-striped">
+<thead>
+    <tr>
+      <th scope="col">Nome da Musica</th>
+      <th scope="col">Musica</th>
+    </tr>
+  </thead>
   <tbody>
   <tr>
   @foreach($musicas as $musica)
     <tr>
-    <td>{{$musica->id_musica}} </td>
-    <td>{{$musica->titulo}} </td>
-    <td>{{$musica->autor}} </td>
-    <!-- <td>
-    @if(!is_null($musica->link))
-    <video controls width="200">
-    <source src="{{$musica->link}}">
-    </video>
-    </td> 
-    @endif-->
+    <td>{{$musica->nome}}</td>
+    <td>
+        <audio controls>
+          <source src="../musica/{{$musica->musica}}" type="audio/mpeg">
+        </audio>
+    </td>
     </tr>
   @endforeach
     </tr>
   </tbody>
 </table>
+@if(Auth::user()->tipo_user == "admin")
+  <a class="dropdown-item text-dark" href="{{route('musica.create')}}">Adicionar Musica</a>
+@endif 
 
-@if(auth()->check())
-<a href="{{route('musica.create')}}" class="btn btn-secondary" role="button"><i class="fas fa-plus"></i></a>
-@endif
 @endsection
