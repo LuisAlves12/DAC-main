@@ -23,7 +23,12 @@
 		<div class="col col-lg-12">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed">
         <a class="nav-brand text-dark" href="{{route('index')}}"><i class="fas fa-home"></i></a>
+        <table><tr><td style="color:white">---</td></tr></table>
         <a class="nav-brand text-dark" href="{{route('perfil.index')}}">Utilizadores</a>
+        <table><tr><td style="color:white">---</td></tr></table>
+        <a class="nav-brand text-dark" href="{{route('frame.index')}}">Frames</a>
+        <table><tr><td style="color:white">---</td></tr></table>
+        <a class="nav-brand text-dark" href="{{route('musica.index')}}">Musica</a>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<!-- <ul class="navbar-nav">
 						<li class="nav-item">
@@ -61,7 +66,7 @@
         @if(Auth::user()->tipo_user == "admin")
           <a class="dropdown-item text-dark" href="{{route('home')}}">Painel</a>
         @endif 
-            <a class="dropdown-item text-dark" href="{{route('perfil.index',['nome'=>Auth::user()->name])}}">Perfil</a>
+            <a class="dropdown-item text-dark" href="{{route('perfil.show',['name'=>Auth::user()->name])}}">Perfil</a>
             <a class="dropdown-item text-dark" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -83,15 +88,5 @@
 <br>
 @yield('conteudo')
 <br>
-<table style="position:absolute; left: 350px; top: 80%;">
-  <tr>
-    <tr>
-    <td><img src="{{asset('img/Logo-AEDAH.jpg')}}" style="width:100%"></td>
-    <td style="color:white;"> ----------------------------------------</td>
-    <td><img src="{{asset('img/logocurso.png')}}" style="width:50%"></td>
-    </tr>
-    </tr>
-  </tbody>
-
 </body>
 </html>

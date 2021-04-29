@@ -8,6 +8,13 @@ use App\Models\Frames;
 
 class FrameController extends Controller
 {
+    public function index(){
+        $frames= Frames::all();
+        return view('frame.index',[
+            'frames'=>$frames
+        ]);
+    }
+
     public function create(){
         return view('frame.create');
     }

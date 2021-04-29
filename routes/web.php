@@ -30,15 +30,21 @@ Route::get('/perfil/show/{name}','App\Http\Controllers\PerfilController@show')->
 
 Route::get('/perfil/{name}/edit','App\Http\Controllers\PerfilController@edit')->name('perfil.edit');
 
-Route::post('/perfil/{name}/update','App\Http\Controllers\PerfilController@update')->name('perfil.update');
+Route::patch('/perfil/{name}/update','App\Http\Controllers\PerfilController@update')->name('perfil.update');
 
 Route::get('/perfil/dashboard','App\Http\Controllers\UserController@dash')->name('perfil.dashboard');
 
 //Route Frames
 
+Route::get('/frame/index','App\Http\Controllers\FrameController@index')->name('frame.index');
+
 Route::get('/frame/create','App\Http\Controllers\FrameController@create')->name('frame.create');
 
 Route::post('/frame/store','App\Http\Controllers\FrameController@store')->name('frame.store');
+
+Route::get('/freame/{id}/edit','App\Http\Controllers\FrameController@edit')->name('frame.edit');
+
+Route::patch('/frame/{id}/update','App\Http\Controllers\FrameController@update')->name('frame.update');
 
 // Route Musicas
 
