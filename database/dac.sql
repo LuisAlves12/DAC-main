@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Abr-2021 às 19:11
+-- Tempo de geração: 30-Abr-2021 às 12:39
 -- Versão do servidor: 10.4.18-MariaDB
 -- versão do PHP: 7.4.16
 
@@ -87,7 +87,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `musicas` (
-  `id` int(11) NOT NULL,
+  `id_musica` int(11) NOT NULL,
   `musica` varchar(255) NOT NULL,
   `nome` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -138,7 +138,7 @@ CREATE TABLE `users` (
   `texto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `bio` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `img_perfil` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1617612267_logo.jpg',
+  `img_perfil` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'default.jpg',
   `tipo_user` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'membro',
   `id_frame` int(255) DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
@@ -153,9 +153,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `musica`, `texto`, `status`, `bio`, `img_perfil`, `tipo_user`, `id_frame`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'LethalArms', 'hiddankill@gmail.com', 'Teste Musica2', 'Teste Texto2', 'Teste Status2', 'Teste Bio2', '1616965888_transferir.png', 'admin', 3, NULL, '$2y$10$l03QmGFhuu8EyH84Og83bujfGwaUizoH.76fbrgUSZydSQaVyhtcK', 'eQYssR4yQl6OmC12VHbGMBtyN3P0ytoAqMrL7rIDWC8UFA0aLhAXMgTOqKEH', '2021-03-26 23:16:51', '2021-04-22 07:09:58'),
-(3, 'nel', 'joana@aedah.pt', 'mala', NULL, NULL, 'tolo', 'default.jpg', 'membro', NULL, NULL, '$2y$10$znXVpdAFeOwcNo9qOkHQ7.NoegPNVPeKJXoj/.07po/1DW.jULuH2', NULL, '2021-03-29 12:46:10', '2021-03-29 12:46:52'),
-(4, 'Luis Alves', 'a15016@aedah.pt', NULL, NULL, NULL, NULL, 'default.jpg', 'admin', NULL, NULL, '$2y$10$u5k1e2pCsvdtA2w28ctG9uDNp6IT9toA6Bg3DVGXLvJYWo4UcF6Vy', NULL, '2021-04-29 13:54:00', '2021-04-29 13:54:00');
+(1, 'LethalArms', 'hiddankill@gmail.com', '0', 'Teste Texto2', 'Teste Status2', 'Teste Bio2', '1619774073_Logo-AEDAH.jpg', 'admin', 3, NULL, '$2y$10$l03QmGFhuu8EyH84Og83bujfGwaUizoH.76fbrgUSZydSQaVyhtcK', 'TkaqLhiFKPC4eOYwvk21YHWNK52j8szWN3PqsJkgQRRFNs9evTdsmbU8BTGa', '2021-03-26 23:16:51', '2021-04-30 08:14:34'),
+(3, 'nel', 'joana@aedah.pt', '0', NULL, NULL, 'tolo', 'default.jpg', 'membro', NULL, NULL, '$2y$10$znXVpdAFeOwcNo9qOkHQ7.NoegPNVPeKJXoj/.07po/1DW.jULuH2', NULL, '2021-03-29 12:46:10', '2021-03-29 12:46:52'),
+(4, 'Luis Alves', 'a15016@aedah.pt', '1619777916_Murta - Porquê.mp3', 'zzzzzzzzzzzzzz', 'cccccccccccccccc', 'xxxxxxxxxxxxxx', '1619777916_1616965957_transferir.jpg', 'membro', 4, NULL, '$2y$10$u5k1e2pCsvdtA2w28ctG9uDNp6IT9toA6Bg3DVGXLvJYWo4UcF6Vy', NULL, '2021-04-29 13:54:00', '2021-04-30 09:18:36');
 
 --
 -- Índices para tabelas despejadas
@@ -171,7 +171,7 @@ ALTER TABLE `frames`
 -- Índices para tabela `musicas`
 --
 ALTER TABLE `musicas`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_musica`);
 
 --
 -- Índices para tabela `users`
@@ -193,7 +193,7 @@ ALTER TABLE `frames`
 -- AUTO_INCREMENT de tabela `musicas`
 --
 ALTER TABLE `musicas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_musica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `users`
