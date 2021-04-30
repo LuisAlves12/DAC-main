@@ -18,8 +18,5 @@
     </tr>
   </tbody>
 </table>
-@if(Auth::user()->tipo_user == "admin")
-  <a class="dropdown-item text-dark" href="{{route('frame.create')}}">Adicionar Frame</a>
-@endif 
 
 @endsection

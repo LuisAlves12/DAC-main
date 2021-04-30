@@ -70,43 +70,41 @@
     }
 </style>
 @section('conteudo')
-<form action="{{route('perfil.update',['nome'=>$user->name])}}" method="post" enctype="multipart/form-data">
+<form action="{{route('perfil.update',['name'=>$user->name])}}" method="post" enctype="multipart/form-data">
 @csrf
-@foreach($user as $users)
 <div class="container" style="max-width: 100%">
     <div class="row">
     <div class="col-md-auto">
-      <h3>{{$users->name}}</h3>
+      <h3>{{$user->name}}</h3>
       <div id="type-badge" style="text-align:center">
-      {{$users->tipo_user}}<br>
+      {{$user->tipo_user}}<br>
       </div>
       <br>
       <div id="imgDiv">
-      @if(!is_null($users->frame))
+      @if(!is_null($user->frame))
       <img src="{{asset('img/'.$user->frame)}}" id="frame">
       @endif
       </div>
       <br>
-      {{$users->status}}<br>
+      {{$user->status}}<br>
       @if(Auth::check())
-      @if(Auth::user()->name == $users->name || Auth::user()->tipo_user == "admin")
-      <a class="btn btn-link" href="{{route('perfil.edit',['nome'=>$users->name])}}">Editar Perfil</a>
+      @if(Auth::user()->name == $user->name || Auth::user()->tipo_user == "admin")
+      <a class="btn btn-link" href="{{route('perfil.edit',['name'=>$user->name])}}">Editar Perfil</a>
       @endif 
       @endif
     <br>
     </div>
         <div class="col">
           <h6>Biografia</h6>
-          <p>{{$users->bio}}</p>
-          <p>{{$users->musica}}</p>
+          <p>{{$user->bio}}</p>
+          <p>{{$user->musica}}</p>
           <audio controls>
-                <source src="../musica/{{$users->musica}}" type="audio/mpeg">
+                <source src="{{asset('/musica/'.$user->musica)}}" type="audio/mpeg">
           </audio>
           <h6>Texto</h6>
-          <p>{{$users->texto}}</p>
+          <p>{{$user->texto}}</p>
         </div> 
     </div>
 </div>
-@endforeach
 </form>
 @endsection

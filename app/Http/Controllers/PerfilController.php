@@ -17,7 +17,7 @@ class PerfilController extends Controller
     }
 
     public function show(Request $r){
-        $nome = $r->nome;
+        $nome = $r->name;
         $user = Perfil::where('name',$nome)->first();
         $frame = Frames::where('id',$user->id_frame)->first();
         if(!is_null($frame)){
@@ -27,7 +27,7 @@ class PerfilController extends Controller
     }
 
     public function edit(Request $r){
-        $nome = $r->nome;
+        $nome = $r->name;
         $user = Perfil::where('name',$nome)->first();
         $frame = Frames::where('id',$user->id_frame)->first();
         if(!is_null($frame)){
@@ -38,7 +38,7 @@ class PerfilController extends Controller
     }
 
     public function update(Request $r){
-        $nome = $r->nome;
+        $nome = $r->name;
         $user = Perfil::where('name',$nome)->first();
         $editUser = $r->validate([
             'bio'=>['nullable','min:1','max:1024'],
@@ -48,8 +48,8 @@ class PerfilController extends Controller
             'img_perfil'=>['image','nullable','max:2000'],
             'id_frame'=>['nullable','numeric'],
         ]);
-        $oldMusica = $user->musica;
         if($r->hasFile('musica')){
+            $oldMusica = $user->musica;
             $nomeMusica = $r->file('musica')->getClientOriginalName();
             $nomeMusica = time().'_'.$nomeMusica;
             $saveMusica = $r->file('musica')->storeAs('musica/',$nomeMusica);
@@ -58,8 +58,8 @@ class PerfilController extends Controller
             }
             $editUser['musica']=$nomeMusica;
         }
-        $oldImage = $user->img_perfil;
         if($r->hasFile('img_perfil')){
+            $oldImage = $user->img_perfil;
             $nomeImg = $r->file('img_perfil')->getClientOriginalName();
             $nomeImg = time().'_'.$nomeImg;
             $saveImg = $r->file('img_perfil')->storeAs('img/', $nomeImg);
@@ -69,6 +69,6 @@ class PerfilController extends Controller
             $editUser['img_perfil']=$nomeImg;
         }
         $userAtualizado = $user->update($editUser);
-        return redirect()->route('perfil.index',['nome'=>$user->name]);
+        return redirect()->route('index');
     }
 }

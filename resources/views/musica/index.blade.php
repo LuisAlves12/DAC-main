@@ -13,9 +13,9 @@
     <tr>
     <td>{{$musica->nome}}</td>
     <td>
-        <audio controls>
-          <source src="../musica/{{$musica->musica}}" type="audio/mpeg">
-        </audio>
+      <audio controls>
+        <source src="{{asset('/mus_index/'.$musica->musica)}}" type="audio/mpeg">
+      </audio>
     </td>
     </tr>
   @endforeach

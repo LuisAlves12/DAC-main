@@ -52,7 +52,7 @@
     }
 </style>
 @section('conteudo')
-<form action="{{route('perfil.update',['nome'=>$user->name])}}" method="post" enctype="multipart/form-data">
+<form action="{{route('perfil.update',['name'=>$user->name])}}" method="post" enctype="multipart/form-data">
 @csrf
 <div class="container" style="max-width: 100%">
     <div class="row">

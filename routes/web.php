@@ -30,7 +30,7 @@ Route::get('/perfil/show/{name}','App\Http\Controllers\PerfilController@show')->
 
 Route::get('/perfil/{name}/edit','App\Http\Controllers\PerfilController@edit')->name('perfil.edit');
 
-Route::patch('/perfil/{name}/update','App\Http\Controllers\PerfilController@update')->name('perfil.update');
+Route::post('/perfil/{name}/update','App\Http\Controllers\PerfilController@update')->name('perfil.update');
 
 Route::get('/perfil/dashboard','App\Http\Controllers\UserController@dash')->name('perfil.dashboard');
 

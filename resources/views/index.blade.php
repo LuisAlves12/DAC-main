@@ -18,11 +18,10 @@
     </tr>
   </tbody>
 </table>
-<table style="position:absolute; left: 350px; top: 80%;">
+<table style="position:absolute;top: 75%;text-align:center;">
   <tr>
     <tr>
     <td><img src="{{asset('img/Logo-AEDAH.jpg')}}" style="width:100%"></td>
-    <td style="color:white;"> ----------------------------------------</td>
     <td><img src="{{asset('img/logocurso.png')}}" style="width:50%"></td>
     </tr>
     </tr>

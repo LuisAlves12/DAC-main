@@ -19,4 +19,5 @@ class Frames extends Model
         'img_frame',
         'nome',
     ];
+    
 }
